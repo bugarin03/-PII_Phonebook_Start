@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Phonebook
+    public class Phonebook : IMessageChannel
     {
         private List<Contact> persons;
 
@@ -13,6 +13,24 @@ namespace Library
         }
 
         public Contact Owner { get; }
+
+        public void AddToContacts (string name, string phone, string email)
+        {
+           Contact contact = new Contact(name, phone, email);
+           persons.Add(contact);
+        }
+
+        public void RemoveFromContacts (string name)
+        {
+            foreach (Contact person in this.persons)
+            {
+                if (person.Name == name )
+                {
+                   persons.Add(person); 
+                }
+                
+            }        
+        }
 
         public List<Contact> Search(string[] names)
         {
@@ -30,6 +48,20 @@ namespace Library
             }
 
             return result;
+        }
+
+        public void Send (string name, string text)
+        {
+            foreach (Contact person in this.persons)
+            {
+                if (person.Name == name )
+                {
+                   string to = person.Phone; 
+                }
+                
+            }           
+            var whatsApp = new WhatsAppApi();
+            whatsApp.Send($"+598{to}", text);   
         }
     }
 }
