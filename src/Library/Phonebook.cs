@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using WhatsAppApiUCU;
 
 namespace Library
 {
@@ -56,12 +58,16 @@ namespace Library
             {
                 if (person.Name == name )
                 {
-                   string to = person.Phone; 
+                    string to = person.Phone; 
+                    var whatsApp = new WhatsAppApi();
+                    whatsApp.Send($"+598{to}", text);
                 }
-                
+                else
+                {
+                    Console.WriteLine("El contacto que usted selecciono no existe");
+                }
             }           
-            var whatsApp = new WhatsAppApi();
-            whatsApp.Send($"+598{to}", text);   
+            
         }
     }
 }

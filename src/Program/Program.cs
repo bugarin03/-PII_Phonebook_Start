@@ -11,9 +11,9 @@ namespace Program
             Contact rey= new Contact("B", "093583046", "b");
             Phonebook emisor = new Phonebook(rey);
             // Crear la lista de contactos
-            Contact receptor= new Contact("p", "095232459", "p");
+            
             // Agregar contactos a la lista
-            emisor.AddToContacts(receptor);
+            emisor.AddToContacts("p", "095232459", "p");
             // Enviar un correo a algunos contactos
 
             // Enviar un WhatsApp a algunos contactos
