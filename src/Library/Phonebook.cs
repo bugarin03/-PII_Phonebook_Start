@@ -17,6 +17,9 @@ namespace Library
         public Contact Owner { get; }
 
         public void AddToContacts (string name, string phone, string email)
+        /*
+            Hice que la instancia de "Contact" se cree en este metodo para respetar 
+        */
         {
            Contact contact = new Contact(name, phone, email);
            persons.Add(contact);
@@ -46,28 +49,20 @@ namespace Library
                     {
                         result.Add(person);
                     }
+                    else
+                    {
+                        Console.WriteLine("El contacto que usted selecciono no existe");
+                    }
                 }
             }
 
             return result;
         }
 
-        public void Send (string name, string text)
+        public void Send (Message message)
         {
-            foreach (Contact person in this.persons)
-            {
-                if (person.Name == name )
-                {
-                    string to = person.Phone; 
-                    var whatsApp = new WhatsAppApi();
-                    whatsApp.Send($"+598{to}", text);
-                }
-                else
-                {
-                    Console.WriteLine("El contacto que usted selecciono no existe");
-                }
-            }           
-            
+            var whatsApp = new WhatsAppApi();
+            whatsApp.Send($"+598{message.To}", message.Text); 
         }
     }
 }
