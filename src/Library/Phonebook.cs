@@ -59,7 +59,7 @@ namespace Library
             return result;
         }
 
-        public void Send (Message message)
+        public void Send (string name , IMessage channel )
         {
             var whatsApp = new WhatsAppApi();
             whatsApp.Send($"+598{message.To}", message.Text); 
