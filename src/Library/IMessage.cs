@@ -1,5 +1,6 @@
 namespace Library
 {
+
     public interface IMessage
     {
         public void Send(Message message);

@@ -79,5 +79,3 @@ pero de acuerdo con mi punto de vista en las agendas únicamente tenemos una per
 por esta misma razón asocieque capaz q se le quería mandar a varios a la vez, por lo que al método Send,
 lo cree de forma q pudiera hacer esta misma función.
 */
-
-
