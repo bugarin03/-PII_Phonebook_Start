@@ -20,7 +20,7 @@ namespace Program
 
 
             // Enviar un WhatsApp a algunos contactos
-            List<string> list = new List<string>{("Bruno")};
+            List<string> list = new List<string>{("b")};
             emisor.Send(list, new WhatsApp(),"hola");
 
             // Enviar un SMS a algunos contactos
